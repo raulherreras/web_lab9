@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-lg-12">
+
+    <!-- Current Tables in Use -->
+    <div class="card">
+      <div class="card-header">
+        <h4>Current Reservations</h4>
+      </div>
+      <div class="card-body">
+        <ul id="tableList" class="list-group">
+          {{#each tables}}
+          <li class='list-group-item mt-4'>
+            <h2>Table #{{@index}}</h2>
+            <hr>
+            <h2>ID: {{customerID}}</h2>
+            <h2>Name: {{customerName}}</h2>
+            <h2>Email: {{customerEmail}}</h2>
+            <h2>Phone: {{phoneNumber}}</h2>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Waiting List Card -->
+    <div class="card mt-4">
+      <div class="card-header">
+        <h4>Waiting List</h4>
+      </div>
+      <div class="card-body">
+        <ul id="waitList" class="list-group">
+          {{#each tables}}
+          <li class='list-group-item mt-4'>
+            <h2>Table #{{@index}}</h2>
+            <hr>
+            <h2>ID: {{customerID}}</h2>
+            <h2>Name: {{customerName}}</h2>
+            <h2>Email: {{customerEmail}}</h2>
+            <h2>Phone: {{phoneNumber}}</h2>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

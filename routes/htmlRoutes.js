@@ -1,9 +1,10 @@
 // ===============================================================================
-// DEPENDENCIES
-// We need to include the path package to get the correct file path for our html
+// LOAD DATA
+// We are linking our routes to a series of "data" sources.
+// These data sources hold arrays of information on table-data, waitinglist, etc.
 // ===============================================================================
-var path = require("path");
-
+var tableData = require("../data/tableData");
+var waitListData = require("../data/waitinglistData");
 
 // ===============================================================================
 // ROUTING
@@ -16,7 +17,7 @@ module.exports = function(app) {
   // ---------------------------------------------------------------------------
 
   app.get("/tables", function(req, res) {
-    res.render("emptyView", {layout: "tables"});
+    res.render("tablesView", {tables: tableData, waitlist: waitListData, layout: "tables"});
   });
 
   app.get("/reserve", function(req, res) {
