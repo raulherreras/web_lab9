@@ -22,7 +22,15 @@ app.use(express.json());
 
 // Set  main.handlebars as the default layout and Handlebars as the view engine
 var exphbs = require("express-handlebars");
-app.engine("handlebars", exphbs({ defaultLayout: "home"}));
+app.engine("handlebars", exphbs({
+  defaultLayout: "home",
+  // define custom helper function to be used to add 1 to table index number in Tables page
+  helpers: {
+    plusOne: function(value) {
+      return value + 1;
+    }
+  }
+}));
 app.set("view engine", "handlebars");
 
 // ================================================================================
