@@ -20,6 +20,11 @@ var PORT = process.env.PORT || 8080;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Set  main.handlebars as the default layout and Handlebars as the view engine
+var exphbs = require("express-handlebars");
+app.engine("handlebars", exphbs({ defaultLayout: "home"}));
+app.set("view engine", "handlebars");
+
 // ================================================================================
 // ROUTER
 // The below points our server to a series of "route" files.
